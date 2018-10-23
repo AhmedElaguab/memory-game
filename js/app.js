@@ -53,6 +53,24 @@ deck.appendChild(fragment)
 // The *list* of "open" cards
 var openCards = [];
 
+// display a message with the final score
+var matchedCards = 0;
+var congrate = function () {
+
+    var congrateEl = document.querySelector('.congrate-wrapper');
+    var starsNumber = document.querySelector('.stars-number');
+    var movesValue = document.querySelector('.moves-value');
+    var timeValue = document.querySelector('.time-value');
+    starsNumber.textContent = stars.children.length;
+    movesValue.textContent = moves;
+    timeValue.textContent = timeEl.textContent;
+    congrateEl.style.display = 'flex';
+
+    // Clear the timer
+    clearInterval(timeInit);
+
+};
+
 // Timer Initialization
 var timeInit;
 var startTiming = true;
@@ -115,6 +133,12 @@ function addCard(clickedCard) {
 
         // Moves counter
         movesCounter();
+
+        // Display the final score message
+        matchedCards += 1;
+        if (matchedCards === 8) {
+            congrate();
+        }
 
     } else if (openCards.length === 2 && openCards[0].dataset.card !== openCards[1].dataset.card) {
 
