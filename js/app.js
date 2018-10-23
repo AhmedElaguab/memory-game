@@ -53,6 +53,15 @@ deck.appendChild(fragment)
 // The *list* of "open" cards
 var openCards = [];
 
+// Lock the cards in the open position function
+function lockCards() {
+
+    openCards[0].classList.add('match');
+    openCards[1].classList.add('match');
+    openCards = [];
+
+}
+
 // Add the card to a *list* of "open" cards function
 function addCard(clickedCard) {
 
@@ -61,7 +70,8 @@ function addCard(clickedCard) {
     // Check to see if the two cards match
     if (openCards.length === 2 && openCards[0].dataset.card === openCards[1].dataset.card) {
 
-
+        // Lock the cards in the open position
+        lockCards();
 
     } else if (openCards.length === 2 && openCards[0].dataset.card !== openCards[1].dataset.card) {
 
