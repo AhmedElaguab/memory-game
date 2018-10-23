@@ -26,6 +26,8 @@ function shuffle(array) {
     return array;
 }
 
+// Shuffle the list of cards
+cardsList = shuffle(cardsList);
 
 /*
  * set up the event listener for a card. If a card is clicked:
