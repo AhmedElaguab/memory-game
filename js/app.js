@@ -2,6 +2,7 @@
  * Create a list that holds all of your cards
  */
 
+var cardsList = [...document.getElementsByClassName('card')];
 
 /*
  * Display the cards on the page
