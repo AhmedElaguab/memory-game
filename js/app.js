@@ -29,6 +29,12 @@ function shuffle(array) {
 // Shuffle the list of cards
 cardsList = shuffle(cardsList);
 
+// Loop through each card and create its HTML
+var fragment = document.createDocumentFragment();
+for (var card of cardsList) {
+    fragment.appendChild(card);
+}
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
