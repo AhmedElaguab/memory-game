@@ -53,8 +53,9 @@ deck.appendChild(fragment)
 // The *list* of "open" cards
 var openCards = [];
 
-// Increment the move counter
+// Increment the move counter & Change stars score Dynamically
 var moves = 0;
+var stars = document.getElementsByClassName('stars')[0];
 var movesCounter = function () {
 
     moves += 1;
@@ -62,6 +63,17 @@ var movesCounter = function () {
     // Display it on the page
     var movesEl = document.querySelector('.moves');
     movesEl.innerHTML = moves;
+
+    // Change stars score Dynamically
+    if (moves === 16) {
+
+        stars.lastElementChild.remove();
+
+    } else if (moves === 26) {
+
+        stars.lastElementChild.remove();
+
+    }
 
 }
 
