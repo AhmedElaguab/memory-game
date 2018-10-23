@@ -108,3 +108,7 @@ h1 {
     float: right;
     cursor: pointer;
 }
+
+.score-panel .time-wrapper {
+    margin: 0 0 0 10px;
+}
