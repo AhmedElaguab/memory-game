@@ -58,6 +58,17 @@ function addCard(clickedCard) {
 
     openCards.push(clickedCard);
 
+    // Check to see if the two cards match
+    if (openCards.length === 2 && openCards[0].dataset.card === openCards[1].dataset.card) {
+
+
+
+    } else if (openCards.length === 2 && openCards[0].dataset.card !== openCards[1].dataset.card) {
+
+
+
+    }
+
 }
 
 // Display the card's symbol function
