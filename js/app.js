@@ -59,6 +59,10 @@ var movesCounter = function () {
 
     moves += 1;
 
+    // Display it on the page
+    var movesEl = document.querySelector('.moves');
+    movesEl.innerHTML = moves;
+
 }
 
 // Lock the cards in the open position function
