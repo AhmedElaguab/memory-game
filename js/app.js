@@ -53,6 +53,11 @@ deck.appendChild(fragment)
 // The *list* of "open" cards
 var openCards = [];
 
+// Timer Initialization
+var timeInit;
+var startTiming = true;
+var timeEl = document.querySelector('.time');
+
 // Increment the move counter & Change stars score Dynamically
 var moves = 0;
 var stars = document.getElementsByClassName('stars')[0];
@@ -144,6 +149,18 @@ deck.addEventListener('click', function (e) {
     if (e.target.nodeName === "LI" && !e.target.classList.contains('open') && !e.target.classList.contains('show')) {
 
         var clickedCard = e.target;
+
+        // Start the timer
+        if (startTiming === true) {
+
+            timeInit = setInterval(function () {
+
+                timeEl.textContent = Number(timeEl.textContent) + 1;
+
+            }, 1000);
+
+            startTiming = false;
+        }
 
         // Display the card's symbol
         displayCard(clickedCard);
