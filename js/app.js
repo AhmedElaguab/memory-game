@@ -53,12 +53,22 @@ deck.appendChild(fragment)
 // The *list* of "open" cards
 var openCards = [];
 
+// Add the card to a *list* of "open" cards function
+function addCard(clickedCard) {
+
+    openCards.push(clickedCard);
+
+}
+
 // Display the card's symbol function
 function displayCard(clickedCard) {
 
     if (openCards.length < 2) {
 
         clickedCard.classList.add('open', 'show');
+
+        // Add the card to a *list* of "open" cards
+        addCard(clickedCard);
 
     }
 
