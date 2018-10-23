@@ -53,6 +53,14 @@ deck.appendChild(fragment)
 // The *list* of "open" cards
 var openCards = [];
 
+// Increment the move counter
+var moves = 0;
+var movesCounter = function () {
+
+    moves += 1;
+
+}
+
 // Lock the cards in the open position function
 function lockCards() {
 
@@ -84,10 +92,16 @@ function addCard(clickedCard) {
         // Lock the cards in the open position
         lockCards();
 
+        // Moves counter
+        movesCounter();
+
     } else if (openCards.length === 2 && openCards[0].dataset.card !== openCards[1].dataset.card) {
 
         // Hide the card's symbol
         hideCardsSymbol();
+
+        // Moves counter
+        movesCounter();
 
     }
 
