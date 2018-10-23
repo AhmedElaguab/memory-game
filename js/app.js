@@ -62,6 +62,17 @@ function lockCards() {
 
 }
 
+// Hide the card's symbol function
+function hideCardsSymbol() {
+
+    setTimeout(function () {
+        openCards[0].classList.remove('open', 'show');
+        openCards[1].classList.remove('open', 'show');
+        openCards = [];
+    }, 550);
+
+}
+
 // Add the card to a *list* of "open" cards function
 function addCard(clickedCard) {
 
@@ -75,7 +86,8 @@ function addCard(clickedCard) {
 
     } else if (openCards.length === 2 && openCards[0].dataset.card !== openCards[1].dataset.card) {
 
-
+        // Hide the card's symbol
+        hideCardsSymbol();
 
     }
 
