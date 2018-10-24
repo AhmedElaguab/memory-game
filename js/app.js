@@ -26,19 +26,15 @@ function shuffle(array) {
     return array;
 }
 
-// Shuffle the list of cards
-cardsList = shuffle(cardsList);
-
-// Loop through each card and create its HTML
-var fragment = document.createDocumentFragment();
-for (var card of cardsList) {
-    fragment.appendChild(card);
-}
-
-// Add each card's HTML to the page
+// Declare the global variables
+var timeEl = document.querySelector('.time');
+var movesEl = document.querySelector('.moves');
 var deck = document.querySelector('.deck');
-deck.innerHTML = '';
-deck.appendChild(fragment)
+var stars = document.getElementsByClassName('stars')[0];
+
+// Start Game!
+restartGame();
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
