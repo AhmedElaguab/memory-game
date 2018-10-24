@@ -31,6 +31,7 @@ var timeEl = document.querySelector('.time');
 var movesEl = document.querySelector('.moves');
 var deck = document.querySelector('.deck');
 var stars = document.getElementsByClassName('stars')[0];
+var congrateEl = document.querySelector('.congrate-wrapper');
 
 // Start Game!
 restartGame();
@@ -53,7 +54,6 @@ var openCards = [];
 var matchedCards = 0;
 var congrate = function () {
 
-    var congrateEl = document.querySelector('.congrate-wrapper');
     var starsNumber = document.querySelector('.stars-number');
     var movesValue = document.querySelector('.moves-value');
     var timeValue = document.querySelector('.time-value');
@@ -253,7 +253,6 @@ var finalScoreRestartBtn = document.querySelector('.btn');
 finalScoreRestartBtn.addEventListener('click', function () {
 
     restartGame();
-    var congrateEl = document.querySelector('.congrate-wrapper');
     congrateEl.style.display = 'none';
 
 });
