@@ -192,3 +192,61 @@ deck.addEventListener('click', function (e) {
     }
 
 })
+
+
+// Restart the game
+var restartBtn = document.querySelector('.restart');
+
+function restartGame() {
+
+    // Shuffle the list of cards
+    cardsList = shuffle(cardsList);
+
+    // Loop through each card and create its HTML
+    var fragment = document.createDocumentFragment();
+    for (var card of cardsList) {
+
+        if (card.classList.contains('open')) {
+            card.classList.remove('open');
+        }
+
+        if (card.classList.contains('show')) {
+            card.classList.remove('show');
+        }
+
+        if (card.classList.contains('match')) {
+            card.classList.remove('match');
+        }
+
+        fragment.appendChild(card);
+    }
+
+    // Add each card's HTML to the page
+    var deck = document.querySelector('.deck');
+    deck.innerHTML = '';
+    deck.appendChild(fragment);
+
+    // Clear the timer
+    clearInterval(timeInit);
+    timeEl.textContent = 0;
+    startTiming = true;
+
+    // Reset the move counter
+    movesEl.textContent = 0;
+    moves = 0;
+
+    // Reset the stars score
+    stars.innerHTML = '<li><i class="fa fa-star"></i></li>' +
+        '<li><i class="fa fa-star"></i></li>' +
+        '<li><i class="fa fa-star"></i></li>';
+
+    // Reset the matched cards score
+    matchedCards = 0;
+
+}
+
+restartBtn.addEventListener('click', function () {
+
+    restartGame();
+
+});
