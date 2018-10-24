@@ -246,3 +246,14 @@ restartBtn.addEventListener('click', function () {
     restartGame();
 
 });
+
+// Add event listener for the restart game button in the score final message
+var finalScoreRestartBtn = document.querySelector('.btn');
+
+finalScoreRestartBtn.addEventListener('click', function () {
+
+    restartGame();
+    var congrateEl = document.querySelector('.congrate-wrapper');
+    congrateEl.style.display = 'none';
+
+});
