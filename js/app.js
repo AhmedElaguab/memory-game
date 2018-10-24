@@ -32,6 +32,8 @@ var movesEl = document.querySelector('.moves');
 var deck = document.querySelector('.deck');
 var stars = document.getElementsByClassName('stars')[0];
 var congrateEl = document.querySelector('.congrate-wrapper');
+// The *list* of "open" cards
+var openCards = [];
 
 // Start Game!
 restartGame();
@@ -47,8 +49,6 @@ restartGame();
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-// The *list* of "open" cards
-var openCards = [];
 
 // display a message with the final score
 var matchedCards = 0;
@@ -194,6 +194,11 @@ deck.addEventListener('click', function (e) {
 var restartBtn = document.querySelector('.restart');
 
 function restartGame() {
+
+    'use strict';
+
+    // Clear openCards List
+    openCards = [];
 
     // Shuffle the list of cards
     cardsList = shuffle(cardsList);
