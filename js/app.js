@@ -239,6 +239,9 @@ function restartGame() {
     // Reset the matched cards score
     matchedCards = 0;
 
+    // Hide the final score wrapper
+    congrateEl.style.display = 'none';
+
 }
 
 restartBtn.addEventListener('click', function () {
@@ -253,6 +256,5 @@ var finalScoreRestartBtn = document.querySelector('.btn');
 finalScoreRestartBtn.addEventListener('click', function () {
 
     restartGame();
-    congrateEl.style.display = 'none';
 
 });
