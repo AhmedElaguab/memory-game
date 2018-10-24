@@ -139,6 +139,17 @@ h1 {
     font-size: 17px;
 }
 
+.congrate-wrapper .btn {
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-top: 1em;
+    padding: .5em 1.5em;
+    border-radius: 3px;
+    border: none;
+    background-color: turquoise;
+    cursor: pointer;
+}
 @keyframes congratePopup{
     0% {
         transform: scale(0)
