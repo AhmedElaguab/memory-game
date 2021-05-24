@@ -2,6 +2,8 @@
 
 A Classic Memory Game.
 
+**[SEE LIVE PREVIEW](https://ahmedelaguab.github.io/memory-game/)**
+
 
 ## Getting Started
 
